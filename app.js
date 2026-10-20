@@ -2,30 +2,20 @@
    JOACHIM'S AUTOS — app.js
    ============================================================ */
 
-// ── FIREBASE SETUP ────────────────────────────────────────
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-  orderBy,
-  query
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
+// Firebase is loaded via CDN scripts in index.html (compat version)
+// Works on Chrome, Safari, Firefox and all browsers
 const firebaseConfig = {
   apiKey: "AIzaSyBmou8Pm9Eu9ANpBq19a7v1M5iUtSgRyGc",
   authDomain: "joachimautos-b3996.firebaseapp.com",
   projectId: "joachimautos-b3996",
   storageBucket: "joachimautos-b3996.firebasestorage.app",
   messagingSenderId: "520168981717",
-  appId: "1:520168981717:web:55f6b95e1b388c03bf0e5c",
-  measurementId: "G-8FCT4HV213"
+  appId: "1:520168981717:web:55f6b95e1b388c03bf0e5c"
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseApp);
-const listingsCollection = collection(db, "listings");
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const listingsCollection = db.collection("listings");
 
 // ── CAR DATA ──────────────────────────────────────────────
 const carsData = [
@@ -139,7 +129,7 @@ function waMessage(car) {
 
 // ── FREE LISTING TRACKER ──────────────────────────────────
 // Uses localStorage so it persists even after browser is closed
-const FREE_LISTING_KEY  = 'ja_free_listing_used';
+const FREE_LISTING_KEY  = 'ja_free_listing_v2';
 const FREE_PHOTO_LIMIT  = 8;
 
 function hasUsedFreeListing() {
@@ -540,7 +530,7 @@ async function submitListing(e) {
   };
 
   try {
-    await addDoc(listingsCollection, newCar);
+    await listingsCollection.add(newCar);
   } catch (err) {
     console.error('Firebase save error:', err);
   }
@@ -678,13 +668,11 @@ function showToast(msg, type = 'success') {
 document.addEventListener('DOMContentLoaded', async () => {
   // Load user-submitted listings from Firebase first
   try {
-    const q = query(listingsCollection, orderBy('createdAt', 'desc'));
-    const snapshot = await getDocs(q);
+    const snapshot = await listingsCollection.orderBy('createdAt', 'desc').get();
     const firebaseListings = [];
     snapshot.forEach(doc => {
       firebaseListings.push({ ...doc.data(), firestoreId: doc.id });
     });
-    // Merge Firebase listings on top of default cars
     allCars = [...firebaseListings, ...carsData];
   } catch (err) {
     console.error('Firebase load error:', err);
@@ -696,20 +684,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('totalCount').textContent = allCars.length;
 });
 
-// ── EXPOSE FUNCTIONS TO GLOBAL SCOPE ─────────────────────
-// Required because type="module" makes all functions local
-window.tryOpenSellModal  = tryOpenSellModal;
-window.openModal         = openModal;
-window.closeModal        = closeModal;
-window.filterCars        = filterCars;
-window.filterByTab       = filterByTab;
-window.viewDetail        = viewDetail;
-window.submitListing     = submitListing;
-window.toggleWishlist    = toggleWishlist;
-window.toggleMenu        = toggleMenu;
-window.slideGallery      = slideGallery;
-window.goToSlide         = goToSlide;
-window.switchPhoto       = switchPhoto;
-window.triggerPhotoInput = triggerPhotoInput;
-window.removePhoto       = removePhoto;
-window.handlePhotoUpload = handlePhotoUpload;
+// ── END OF APP.JS ─────────────────────────────────────────
