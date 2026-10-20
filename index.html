@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JA Auto — Joachim Automotive | Drive Your Dreams</title>
+  <meta name="description" content="Buy and sell quality cars in Ghana. Joachim Automotive offers the best selection of new and used vehicles." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <span><i class="fas fa-phone-alt"></i> +233 257 197 178</span>
+        <span><i class="fas fa-envelope"></i> joachimautoss@gmail.com</span>
+        <span><i class="fas fa-map-marker-alt"></i> Ghana</span>
+      </div>
+      <div class="topbar-right">
+        <span><i class="fas fa-clock"></i> Mon – Sat: 8am – 6pm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="JA Auto — Joachim Automotive" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">Joachim Automotive</span>
+          <span class="logo-sub">Drive Your Dreams</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#listings">Inventory</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-outline" onclick="tryOpenSellModal()"><i class="fas fa-plus"></i> List Your Car</button>
+        <a href="https://wa.me/233257197178" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#listings" onclick="toggleMenu()">Inventory</a>
+      <a href="#why-us" onclick="toggleMenu()">Why Us</a>
+      <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+      <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+      <a href="https://wa.me/233257197178" target="_blank" class="mobile-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-shield-alt"></i> Ghana's Trusted Car Dealer</div>
+      <h1>Find Your Dream Car<br/><span class="hero-highlight">At The Best Price</span></h1>
+      <p>Browse our handpicked collection of premium new and used vehicles. Quality you can trust, prices you'll love.</p>
+
+      <div class="search-box">
+        <div class="search-field">
+          <label><i class="fas fa-car"></i> Make</label>
+          <select id="filterMake">
+            <option value="">All Makes</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label><i class="fas fa-tags"></i> Type</label>
+          <select id="filterType">
+            <option value="">All Types</option>
+            <option value="Sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="Truck">Truck</option>
+            <option value="Coupe">Coupe</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label><i class="fas fa-dollar-sign"></i> Budget</label>
+          <select id="filterPrice">
+            <option value="">Any Price</option>
+            <option value="20000">Under $20,000</option>
+            <option value="40000">Under $40,000</option>
+            <option value="70000">Under $70,000</option>
+            <option value="100000">Under $100,000</option>
+          </select>
+        </div>
+        <button class="search-btn" onclick="filterCars()">
+          <i class="fas fa-search"></i> Search Cars
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat"><span id="totalCount">9</span><small>Cars Available</small></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span>500+</span><small>Happy Customers</small></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span>5★</span><small>Rated Dealer</small></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span>10+</span><small>Years Experience</small></div>
+      </div>
+    </div>
+    <div class="hero-scroll"><i class="fas fa-chevron-down"></i></div>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <section class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><i class="fas fa-shield-check"></i><span>Verified Vehicles</span></div>
+      <div class="trust-item"><i class="fas fa-file-contract"></i><span>Clear Title Guaranteed</span></div>
+      <div class="trust-item"><i class="fas fa-tools"></i><span>Inspected & Serviced</span></div>
+      <div class="trust-item"><i class="fas fa-handshake"></i><span>Honest Pricing</span></div>
+      <div class="trust-item"><i class="fas fa-headset"></i><span>After-Sale Support</span></div>
+    </div>
+  </section>
+
+  <!-- CAR LISTINGS -->
+  <section class="listings-section" id="listings">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Our Inventory</div>
+        <h2>Available Vehicles</h2>
+        <p>Every car is inspected, verified, and ready to drive off the lot.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="tab active" onclick="filterByTab(this, '')">All Cars</button>
+        <button class="tab" onclick="filterByTab(this, 'New')">New</button>
+        <button class="tab" onclick="filterByTab(this, 'Used')">Used</button>
+        <button class="tab" onclick="filterByTab(this, 'SUV')">SUVs</button>
+        <button class="tab" onclick="filterByTab(this, 'Sedan')">Sedans</button>
+        <button class="tab" onclick="filterByTab(this, 'Truck')">Trucks</button>
+      </div>
+
+      <div class="car-grid" id="carGrid"></div>
+      <div class="no-results" id="noResults" style="display:none;">
+        <i class="fas fa-car-crash"></i>
+        <h3>No cars found</h3>
+        <p>Try adjusting your filters or <a href="#contact">contact us</a> for custom requests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <div class="section-header light">
+        <div class="section-tag">Why Choose Us</div>
+        <h2>The Joachim's Autos Difference</h2>
+        <p>We're not just selling cars — we're building long-term relationships.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-medal"></i></div>
+          <h3>Premium Quality</h3>
+          <p>Every vehicle passes a rigorous 50-point inspection before hitting our lot.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-tags"></i></div>
+          <h3>Best Prices</h3>
+          <p>We offer competitive market pricing with no hidden fees or surprises.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+          <h3>Clean Documentation</h3>
+          <p>All vehicles come with complete paperwork, clear title, and service history.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-phone-volume"></i></div>
+          <h3>Dedicated Support</h3>
+          <p>Our team is available 6 days a week to answer all your questions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-car-side"></i></div>
+          <h3>Wide Selection</h3>
+          <p>From sedans to SUVs and trucks — we have something for every lifestyle.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-star"></i></div>
+          <h3>5-Star Reputation</h3>
+          <p>Hundreds of satisfied customers across Ghana trust the Joachim's Autos name.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Customer Reviews</div>
+        <h2>What Our Customers Say</h2>
+        <p>Real stories from real buyers across Ghana.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"Bought my Toyota RAV4 from Joachim's Autos and it was the smoothest car purchase I've ever made. Very professional and honest team!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">KA</div><div><strong>Kwame Asante</strong><small>Accra, Ghana</small></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"The BMW X5 I got was in perfect condition. Joachim was transparent about everything — no hidden costs. I highly recommend this dealership."</p>
+          <div class="reviewer"><div class="reviewer-avatar">AB</div><div><strong>Abena Boateng</strong><small>Kumasi, Ghana</small></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p>"Great service from start to finish. Got a fair price for my old car and drove away in a brand new Honda Civic. Will definitely be back!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">EO</div><div><strong>Elikem Oti</strong><small>Takoradi, Ghana</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Pricing & Plans</div>
+        <h2>List Your Car. Reach More Buyers.</h2>
+        <p>Choose a plan that works for you. All payments via Mobile Money (MoMo).</p>
+      </div>
+
+      <!-- LISTING PLANS -->
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-car"></i></div>
+          <div class="pricing-name">Basic Listing</div>
+          <div class="pricing-price">GH₵ 50<span>/listing</span></div>
+          <div class="pricing-duration">Valid for 30 days</div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> 1 car photo</li>
+            <li><i class="fas fa-check"></i> Listed in search results</li>
+            <li><i class="fas fa-check"></i> Buyer can call & WhatsApp you</li>
+            <li><i class="fas fa-check"></i> 30-day visibility</li>
+            <li class="disabled"><i class="fas fa-times"></i> Featured placement</li>
+            <li class="disabled"><i class="fas fa-times"></i> Social media promotion</li>
+          </ul>
+          <a href="https://wa.me/233257197178?text=Hi%20Joachim%2C%20I%27d%20like%20to%20list%20my%20car%20on%20the%20Basic%20plan%20(GH%E2%82%B550)" target="_blank" class="pricing-btn">Get Started</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-icon"><i class="fas fa-star"></i></div>
+          <div class="pricing-name">Premium Listing</div>
+          <div class="pricing-price">GH₵ 150<span>/listing</span></div>
+          <div class="pricing-duration">Valid for 60 days</div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Up to 5 car photos</li>
+            <li><i class="fas fa-check"></i> Featured at top of results</li>
+            <li><i class="fas fa-check"></i> Buyer can call & WhatsApp you</li>
+            <li><i class="fas fa-check"></i> 60-day visibility</li>
+            <li><i class="fas fa-check"></i> Shared on our WhatsApp status</li>
+            <li><i class="fas fa-check"></i> Social media promotion</li>
+          </ul>
+          <a href="https://wa.me/233257197178?text=Hi%20Joachim%2C%20I%27d%20like%20to%20list%20my%20car%20on%20the%20Premium%20plan%20(GH%E2%82%B5150)" target="_blank" class="pricing-btn">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-building"></i></div>
+          <div class="pricing-name">Dealer Monthly</div>
+          <div class="pricing-price">GH₵ 400<span>/month</span></div>
+          <div class="pricing-duration">Unlimited listings</div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Unlimited car listings</li>
+            <li><i class="fas fa-check"></i> All listings featured</li>
+            <li><i class="fas fa-check"></i> Dedicated dealer profile</li>
+            <li><i class="fas fa-check"></i> Priority customer leads</li>
+            <li><i class="fas fa-check"></i> Weekly social media posts</li>
+            <li><i class="fas fa-check"></i> Monthly performance report</li>
+          </ul>
+          <a href="https://wa.me/233257197178?text=Hi%20Joachim%2C%20I%27m%20a%20dealer%20and%20interested%20in%20the%20monthly%20plan%20(GH%E2%82%B5400)" target="_blank" class="pricing-btn">Contact Us</a>
+        </div>
+
+      </div>
+
+      <!-- EXTRA SERVICES -->
+      <div class="services-header">
+        <h3>Extra Services</h3>
+        <p>Additional help we offer buyers and sellers</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-search"></i></div>
+          <div class="service-info">
+            <h4>Car Inspection</h4>
+            <p>We inspect the car before you buy — full condition report provided.</p>
+          </div>
+          <div class="service-price">GH₵ 150</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="service-info">
+            <h4>Paperwork Assistance</h4>
+            <p>We help with all ownership transfer documents and registration.</p>
+          </div>
+          <div class="service-price">From GH₵ 200</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck"></i></div>
+          <div class="service-info">
+            <h4>Car Delivery</h4>
+            <p>We deliver the car to your location anywhere within Ghana.</p>
+          </div>
+          <div class="service-price">Call for<br/>pricing</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-ad"></i></div>
+          <div class="service-info">
+            <h4>Advertise Your Automotive Business</h4>
+            <p>Promote your auto shop, spare parts store, or insurance brand to thousands of car buyers monthly.</p>
+          </div>
+          <div class="service-price">GH₵ 300/mo</div>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <i class="fas fa-mobile-alt"></i>
+        <span>All payments accepted via <strong>MTN Mobile Money, Vodafone Cash & AirtelTigo Money</strong>. Contact us on WhatsApp to get started.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SELL YOUR CAR CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Ready to Sell Your Car?</h2>
+        <p>List your vehicle in minutes and reach thousands of buyers across Ghana — completely free.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#pricing" class="btn-primary-lg"><i class="fas fa-tags"></i> See Listing Plans</a>
+        <a href="https://wa.me/233257197178" target="_blank" class="btn-whatsapp-lg"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Get In Touch</div>
+        <h2>Contact Us</h2>
+        <p>Have a question or want to schedule a test drive? We'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <h4>Call Us</h4>
+              <p>+233 257 197 178</p>
+              <small>Mon – Sat, 8am – 6pm</small>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email Us</h4>
+              <a href="mailto:joachimautoss@gmail.com">joachimautoss@gmail.com</a>
+              <small>We reply within 24 hours</small>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/233257197178" target="_blank">+233 257 197 178</a>
+              <small>Quick responses guaranteed</small>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Ghana</p>
+              <small>Visit us by appointment</small>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" action="https://formspree.io/f/mvkgqdzw" method="POST">
+            <h3>Send Us a Message</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="e.g. Kwame Mensah" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="+233 XX XXX XXXX" />
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select name="subject">
+                <option>I want to buy a car</option>
+                <option>I want to sell my car</option>
+                <option>I have a general inquiry</option>
+                <option>I want to schedule a test drive</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" placeholder="Tell us more about what you're looking for..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-about-logo">
+            <img src="logo.png" alt="JA Auto — Joachim Automotive" class="footer-about-logo-img" />
+          </div>
+          <p>Your trusted partner for buying and selling quality vehicles in Ghana. Transparency, trust, and top-tier service — always.</p>
+          <div class="social-links">
+            <a href="https://wa.me/233257197178" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:joachimautoss@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+233257197178"><i class="fas fa-phone"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#listings"><i class="fas fa-chevron-right"></i> Browse Cars</a></li>
+            <li><a href="#why-us"><i class="fas fa-chevron-right"></i> Why Choose Us</a></li>
+            <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing & Plans</a></li>
+            <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Reviews</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Car Types</h4>
+          <ul>
+            <li><a href="#listings"><i class="fas fa-chevron-right"></i> Sedans</a></li>
+            <li><a href="#listings"><i class="fas fa-chevron-right"></i> SUVs</a></li>
+            <li><a href="#listings"><i class="fas fa-chevron-right"></i> Trucks</a></li>
+            <li><a href="#listings"><i class="fas fa-chevron-right"></i> Coupes</a></li>
+            <li><a href="#listings"><i class="fas fa-chevron-right"></i> New Arrivals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fas fa-phone-alt"></i> +233 257 197 178</li>
+            <li><i class="fas fa-envelope"></i> joachimautoss@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Ghana</li>
+            <li><i class="fas fa-clock"></i> Mon–Sat: 8am – 6pm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Joachim Automotive (JA Auto). All Rights Reserved.</p>
+        <p>Built with <i class="fas fa-heart" style="color:#e63946"></i> in Ghana</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/233257197178" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us!</span>
+  </a>
+
+  <!-- SELL / LIST CAR MODAL -->
+  <div class="modal-overlay" id="sellModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('sellModal')"><i class="fas fa-times"></i></button>
+      <div class="modal-header">
+        <div class="modal-icon"><i class="fas fa-car"></i></div>
+        <h2>List Your Car</h2>
+        <p>Fill in the details below. Your <strong style="color:var(--red);">first listing is free</strong> with up to 8 photos.</p>
+      </div>
+      <form class="modal-form" onsubmit="submitListing(event)">
+
+        <!-- SELLER INFO -->
+        <div class="form-section-title"><i class="fas fa-user"></i> Your Details</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" id="sellerName" placeholder="Full name" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="sellerPhone" placeholder="+233 XX XXX XXXX" required />
+          </div>
+        </div>
+
+        <!-- CAR IDENTITY -->
+        <div class="form-section-title"><i class="fas fa-car"></i> Car Details</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Brand / Make *</label>
+            <input type="text" id="carMake" placeholder="e.g. Toyota, BMW, Ford" required />
+          </div>
+          <div class="form-group">
+            <label>Model *</label>
+            <input type="text" id="carModel" placeholder="e.g. Camry, X5, Hilux" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Year *</label>
+            <input type="number" id="carYear" placeholder="e.g. 2020" min="1990" max="2026" required />
+          </div>
+          <div class="form-group">
+            <label>Price (GH₵) *</label>
+            <input type="number" id="carPrice" placeholder="e.g. 85000" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Mileage (km) *</label>
+            <input type="number" id="carMileage" placeholder="e.g. 45000" required />
+          </div>
+          <div class="form-group">
+            <label>Body Type *</label>
+            <select id="carType">
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Truck">Truck / Pickup</option>
+              <option value="Coupe">Coupe</option>
+              <option value="Hatchback">Hatchback</option>
+              <option value="Van">Van / Minivan</option>
+              <option value="Convertible">Convertible</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- SPECS -->
+        <div class="form-section-title"><i class="fas fa-cogs"></i> Specifications</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Transmission *</label>
+            <select id="carTransmission">
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Fuel Type *</label>
+            <select id="carFuel">
+              <option value="Petrol">Petrol</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Electric">Electric</option>
+              <option value="LPG">LPG</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Condition *</label>
+            <select id="carCondition">
+              <option value="Used">Used</option>
+              <option value="New">Brand New</option>
+              <option value="Foreign Used">Foreign Used</option>
+              <option value="Ghanaian Used">Ghanaian Used</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Color</label>
+            <input type="text" id="carColor" placeholder="e.g. Black, White, Silver" />
+          </div>
+        </div>
+
+        <!-- LOCATION -->
+        <div class="form-section-title"><i class="fas fa-map-marker-alt"></i> Location</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Region *</label>
+            <select id="carRegion" required>
+              <option value="">Select Region</option>
+              <option value="Greater Accra">Greater Accra</option>
+              <option value="Ashanti">Ashanti</option>
+              <option value="Western">Western</option>
+              <option value="Central">Central</option>
+              <option value="Eastern">Eastern</option>
+              <option value="Northern">Northern</option>
+              <option value="Upper East">Upper East</option>
+              <option value="Upper West">Upper West</option>
+              <option value="Volta">Volta</option>
+              <option value="Brong-Ahafo">Brong-Ahafo</option>
+              <option value="Oti">Oti</option>
+              <option value="Savannah">Savannah</option>
+              <option value="North East">North East</option>
+              <option value="Bono East">Bono East</option>
+              <option value="Ahafo">Ahafo</option>
+              <option value="Western North">Western North</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>City / Area *</label>
+            <input type="text" id="carCity" placeholder="e.g. Accra, Kumasi, Tema" required />
+          </div>
+        </div>
+
+        <!-- DESCRIPTION & PHOTOS -->
+        <div class="form-section-title"><i class="fas fa-align-left"></i> Description & Photos</div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="carDesc" placeholder="Describe your car — condition, special features, service history, reason for selling..." rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Car Photos <span style="color:var(--mid-gray);font-weight:400;text-transform:none;">(up to 8 photos — click any slot to add)</span></label>
+          <div class="photo-preview-grid" id="photoPreviewGrid"></div>
+        </div>
+        <button type="submit" class="form-submit"><i class="fas fa-check-circle"></i> Submit Listing</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CAR DETAIL MODAL -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal modal-large">
+      <button class="modal-close" onclick="closeModal('detailModal')"><i class="fas fa-times"></i></button>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- PAYMENT REQUIRED MODAL -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('paymentModal')"><i class="fas fa-times"></i></button>
+      <div class="modal-header">
+        <div class="modal-icon" style="background:rgba(230,57,70,0.1);color:var(--red);"><i class="fas fa-lock"></i></div>
+        <h2>Free Listing Used</h2>
+        <p>You've already used your free listing. Choose a plan to list more cars.</p>
+      </div>
+      <div style="padding:0 32px 32px;">
+
+        <div class="payment-plan-card">
+          <div class="payment-plan-top">
+            <div>
+              <div class="payment-plan-name">Basic Listing</div>
+              <div class="payment-plan-desc">1 listing · up to 5 photos · 30 days</div>
+            </div>
+            <div class="payment-plan-price">GH₵ 50</div>
+          </div>
+          <a href="https://wa.me/233257197178?text=Hi%20Joachim%2C%20I%27d%20like%20to%20pay%20for%20a%20Basic%20listing%20(GH%E2%82%B550)" target="_blank" class="payment-plan-btn" onclick="closeModal('paymentModal')">
+            <i class="fab fa-whatsapp"></i> Pay via WhatsApp
+          </a>
+        </div>
+
+        <div class="payment-plan-card featured-plan">
+          <div class="plan-popular">Most Popular</div>
+          <div class="payment-plan-top">
+            <div>
+              <div class="payment-plan-name">Premium Listing</div>
+              <div class="payment-plan-desc">1 listing · up to 8 photos · 60 days · featured</div>
+            </div>
+            <div class="payment-plan-price">GH₵ 150</div>
+          </div>
+          <a href="https://wa.me/233257197178?text=Hi%20Joachim%2C%20I%27d%20like%20to%20pay%20for%20a%20Premium%20listing%20(GH%E2%82%B5150)" target="_blank" class="payment-plan-btn" onclick="closeModal('paymentModal')">
+            <i class="fab fa-whatsapp"></i> Pay via WhatsApp
+          </a>
+        </div>
+
+        <div class="payment-plan-card">
+          <div class="payment-plan-top">
+            <div>
+              <div class="payment-plan-name">Dealer Monthly</div>
+              <div class="payment-plan-desc">Unlimited listings · all features · monthly</div>
+            </div>
+            <div class="payment-plan-price">GH₵ 400<small>/mo</small></div>
+          </div>
+          <a href="https://wa.me/233257197178?text=Hi%20Joachim%2C%20I%27m%20interested%20in%20the%20Dealer%20Monthly%20plan%20(GH%E2%82%B5400)" target="_blank" class="payment-plan-btn" onclick="closeModal('paymentModal')">
+            <i class="fab fa-whatsapp"></i> Pay via WhatsApp
+          </a>
+        </div>
+
+        <p style="text-align:center;font-size:0.8rem;color:var(--mid-gray);margin-top:16px;">
+          <i class="fas fa-mobile-alt" style="color:var(--red);"></i>
+          Payment via MTN MoMo · Vodafone Cash · AirtelTigo
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
