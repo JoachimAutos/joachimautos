@@ -22,12 +22,144 @@ const carsData = [
   {
     id: 1,
     make: "Toyota", model: "Camry", year: 2022,
-    price: 24500, mileage: 18000, type: "Sedan", condition: "Used",
+    price: 185000, mileage: 18000, type: "Sedan", condition: "Used",
     image: "https://source.unsplash.com/600x400/?Toyota,Camry,sedan,car",
     color: "Pearl White", fuel: "Petrol", transmission: "Automatic",
     seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
     description: "One owner, clean title, full service history. New tires and recent oil change. Great fuel economy and a very comfortable ride for the whole family."
   },
+  {
+    id: 2,
+    make: "BMW", model: "X5", year: 2023,
+    price: 520000, mileage: 5000, type: "SUV", condition: "New",
+    image: "https://source.unsplash.com/600x400/?BMW,X5,luxury,SUV",
+    color: "Jet Black", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "Barely used demo model. Fully loaded with panoramic sunroof, heated seats, 360° camera, and full driver assist package. In showroom condition."
+  },
+  {
+    id: 3,
+    make: "Ford", model: "F-150", year: 2021,
+    price: 265000, mileage: 32000, type: "Truck", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Ford,F150,pickup,truck",
+    color: "Oxford White", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Tema, Greater Accra",
+    description: "Powerful V8 engine with tow package, bed liner, and running boards. Perfect for business or weekend off-road adventures."
+  },
+  {
+    id: 4,
+    make: "Honda", model: "Civic", year: 2023,
+    price: 168000, mileage: 3000, type: "Sedan", condition: "New",
+    image: "https://source.unsplash.com/600x400/?Honda,Civic,sedan,car",
+    color: "Sonic Grey", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Kumasi, Ashanti",
+    description: "Brand new with full factory warranty. Sport trim with turbocharged engine, Apple CarPlay, Android Auto, and Honda Sensing safety suite."
+  },
+  {
+    id: 5,
+    make: "Mercedes", model: "GLE 450", year: 2022,
+    price: 595000, mileage: 11000, type: "SUV", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Mercedes,GLE,luxury,SUV",
+    color: "Selenite Grey", fuel: "Hybrid", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "Stunning luxury SUV with AMG Sport package. Air suspension, Burmester surround sound, and night vision assist. Low mileage, impeccable condition."
+  },
+  {
+    id: 6,
+    make: "Hyundai", model: "Tucson", year: 2022,
+    price: 210000, mileage: 21000, type: "SUV", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Hyundai,Tucson,SUV,car",
+    color: "Phantom Black", fuel: "Hybrid", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Takoradi, Western",
+    description: "Hybrid model with excellent fuel economy. Panoramic roof, wireless charging, and smart parking assist. The perfect family SUV at a great price."
+  },
+  {
+    id: 7,
+    make: "Ford", model: "Mustang GT", year: 2021,
+    price: 320000, mileage: 14000, type: "Coupe", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Ford,Mustang,GT,red,sports",
+    color: "Race Red", fuel: "Petrol", transmission: "Manual",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "5.0L V8 Coyote engine producing 450hp. Brembo brakes, Recaro seats, and active exhaust. An absolutely thrilling driving experience."
+  },
+  {
+    id: 8,
+    make: "Toyota", model: "RAV4", year: 2023,
+    price: 235000, mileage: 1500, type: "SUV", condition: "New",
+    image: "https://source.unsplash.com/600x400/?Toyota,RAV4,blue,SUV",
+    color: "Blueprint Blue", fuel: "Hybrid", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "New arrival. Hybrid powertrain with AWD, 8-inch touchscreen, Toyota Safety Sense 2.0, and wireless Apple CarPlay. Excellent value for money."
+  },
+  {
+    id: 9,
+    make: "Honda", model: "CR-V", year: 2020,
+    price: 148000, mileage: 45000, type: "SUV", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Honda,CRV,silver,SUV",
+    color: "Lunar Silver", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "Well maintained family SUV with two previous owners. Full service history available. Great cargo space and a very reliable engine."
+  },
+  {
+    id: 10,
+    make: "Toyota", model: "Corolla", year: 2021,
+    price: 135000, mileage: 28000, type: "Sedan", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Toyota,Corolla,sedan,white",
+    color: "Pearl White", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Kumasi, Ashanti",
+    description: "Very clean Toyota Corolla. One careful owner, full service history. Excellent fuel economy, perfect for daily commuting in Ghana."
+  },
+  {
+    id: 11,
+    make: "Toyota", model: "Hilux", year: 2020,
+    price: 340000, mileage: 38000, type: "Truck", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Toyota,Hilux,pickup,truck",
+    color: "Silver", fuel: "Diesel", transmission: "Manual",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Takoradi, Western",
+    description: "Powerful diesel Hilux pickup. Double cab, tow bar fitted, bull bar. Perfect for business, construction or off-road. Very reliable workhorse."
+  },
+  {
+    id: 12,
+    make: "Mercedes", model: "C200", year: 2019,
+    price: 395000, mileage: 42000, type: "Sedan", condition: "Foreign Used",
+    image: "https://source.unsplash.com/600x400/?Mercedes,C200,sedan,black",
+    color: "Obsidian Black", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "Foreign used Mercedes C200 in immaculate condition. Leather interior, panoramic sunroof, reverse camera. A true luxury experience at a great price."
+  },
+  {
+    id: 13,
+    make: "Kia", model: "Sportage", year: 2022,
+    price: 245000, mileage: 15000, type: "SUV", condition: "Foreign Used",
+    image: "https://source.unsplash.com/600x400/?Kia,Sportage,SUV,red",
+    color: "Signal Red", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "Stunning Kia Sportage with low mileage. Apple CarPlay, heated seats, blind spot monitoring. 7-year warranty history. Drives like new."
+  },
+  {
+    id: 14,
+    make: "Nissan", model: "X-Trail", year: 2020,
+    price: 220000, mileage: 33000, type: "SUV", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Nissan,Xtrail,SUV,silver",
+    color: "Blade Silver", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Tema, Greater Accra",
+    description: "Family-friendly 7-seater Nissan X-Trail. Third row seating, panoramic roof, around view monitor. Well maintained with full service history."
+  }
+];
   {
     id: 2,
     make: "BMW", model: "X5", year: 2023,
@@ -98,7 +230,58 @@ const carsData = [
     image: "https://source.unsplash.com/600x400/?Honda,CRV,silver,SUV",
     color: "Lunar Silver", fuel: "Petrol", transmission: "Automatic",
     seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
     description: "Well maintained family SUV with two previous owners. Full service history available. Great cargo space and a very reliable engine."
+  },
+  {
+    id: 10,
+    make: "Toyota", model: "Corolla", year: 2021,
+    price: 18000, mileage: 28000, type: "Sedan", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Toyota,Corolla,sedan,white",
+    color: "Pearl White", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Kumasi, Ashanti",
+    description: "Very clean Toyota Corolla. One careful owner, full service history. Excellent fuel economy, perfect for daily commuting in Ghana."
+  },
+  {
+    id: 11,
+    make: "Toyota", model: "Hilux", year: 2020,
+    price: 45000, mileage: 38000, type: "Truck", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Toyota,Hilux,pickup,truck",
+    color: "Silver", fuel: "Diesel", transmission: "Manual",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Takoradi, Western",
+    description: "Powerful diesel Hilux pickup. Double cab, tow bar fitted, bull bar. Perfect for business, construction or off-road. Very reliable workhorse."
+  },
+  {
+    id: 12,
+    make: "Mercedes", model: "C200", year: 2019,
+    price: 52000, mileage: 42000, type: "Sedan", condition: "Foreign Used",
+    image: "https://source.unsplash.com/600x400/?Mercedes,C200,sedan,black",
+    color: "Obsidian Black", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "Foreign used Mercedes C200 in immaculate condition. Leather interior, panoramic sunroof, reverse camera. A true luxury experience at a great price."
+  },
+  {
+    id: 13,
+    make: "Kia", model: "Sportage", year: 2022,
+    price: 32000, mileage: 15000, type: "SUV", condition: "Foreign Used",
+    image: "https://source.unsplash.com/600x400/?Kia,Sportage,SUV,red",
+    color: "Signal Red", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Accra, Greater Accra",
+    description: "Stunning Kia Sportage with low mileage. Apple CarPlay, heated seats, blind spot monitoring. 7-year warranty history. Drives like new."
+  },
+  {
+    id: 14,
+    make: "Nissan", model: "X-Trail", year: 2020,
+    price: 29000, mileage: 33000, type: "SUV", condition: "Used",
+    image: "https://source.unsplash.com/600x400/?Nissan,Xtrail,SUV,silver",
+    color: "Blade Silver", fuel: "Petrol", transmission: "Automatic",
+    seller: "Joachim's Autos", phone: "+233 257 197 178",
+    location: "Tema, Greater Accra",
+    description: "Family-friendly 7-seater Nissan X-Trail. Third row seating, panoramic roof, around view monitor. Well maintained with full service history."
   }
 ];
 
@@ -666,22 +849,29 @@ function showToast(msg, type = 'success') {
 
 // ── INIT ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
-  // Load user-submitted listings from Firebase first
+  // Show default cars IMMEDIATELY so the page never looks empty
+  allCars = [...carsData];
+  renderCars(allCars);
+  updateMakeFilter();
+  document.getElementById('totalCount').textContent = allCars.length;
+
+  // Then load Firebase listings in the background and merge them in
   try {
     const snapshot = await listingsCollection.orderBy('createdAt', 'desc').get();
     const firebaseListings = [];
     snapshot.forEach(doc => {
       firebaseListings.push({ ...doc.data(), firestoreId: doc.id });
     });
-    allCars = [...firebaseListings, ...carsData];
+    if (firebaseListings.length > 0) {
+      allCars = [...firebaseListings, ...carsData];
+      renderCars(allCars);
+      updateMakeFilter();
+      document.getElementById('totalCount').textContent = allCars.length;
+    }
   } catch (err) {
     console.error('Firebase load error:', err);
-    allCars = [...carsData];
+    // Default cars already showing — no action needed
   }
-
-  renderCars(allCars);
-  updateMakeFilter();
-  document.getElementById('totalCount').textContent = allCars.length;
 });
 
 // ── END OF APP.JS ─────────────────────────────────────────
